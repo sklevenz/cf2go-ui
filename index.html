@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>cf2go</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/faviconapple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:image" content="http://getbootstrap.com/assets/brand/bootstrap-social.png">
+  <meta property="og:image:secure_url" content="https://getbootstrap.com/assets/brand/bootstrap-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">cf2go</a>
+  </nav>
+  <div class="jumbotron jumbotron-fluid p-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm">
+          <h2>Cloud Foundry Landscapes</h2>
+          <h3 class="text-muted">Metadata and Tools</h3>
+        </div>
+        <div class="col-sm">
+          <img class="rounded float-left img-fluid" src="img/cf2go-1432x698.png" alt="Landscapes">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h3 class="text-muted">Filter</h3>
+    <div class="input-group">
+      <span class="input-group-addon m-1">
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> AWS</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Openstack</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Azure</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> GCP</label>
+</span>
+      <span class="input-group-addon m-1">
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Development</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Hotfix</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Staging</label>
+<label class="input-label p-1"><input class="input-checkbox" type="checkbox" checked> Productive</label>
+</span>
+    </div>
+  </div>
+  <div class="container-fluid p-3">
+    <h3 class="text-muted">Landscapes</h3>
+    <table class="table table-bordered table-hover table-sm table-responsive">
+      <caption>List of landscapes</caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">IaaS</th>
+          <th scope="col">Owner</th>
+          <th scope="col">Labels</th>
+          <th scope="col">Description</th>
+          <th scope="col">Jumpbox IP</th>
+          <th scope="col">Domain</th>
+          <th scope="col">Git Repository</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">cf-eu10-staging</th>
+          <td>aws</td>
+          <td>cfi</td>
+          <td>development aws staging</td>
+          <td>Development Landscape</td>
+          <td>53.14.23.1</td>
+          <td>staging.ourcloud.io</td>
+          <td><a href="http://github.com/ourcloud/cf-eu10-staging">cf-eu10-staging repository</a></td>
+        </tr>
+        <tr>
+          <th scope="row">cf-eu10-canary</th>
+          <td>azure</td>
+          <td>cfi</td>
+          <td>productive azure</td>
+          <td>Canary Landscape</td>
+          <td>53.14.23.2</td>
+          <td>canary.ourcloud.io</td>
+          <td><a href="http://github.com/ourcloud/cf-eu10-canary">cf-eu10-canary repository</a></td>
+        </tr>
+        <tr>
+          <th scope="row">cf-eu10-hotfix</th>
+          <td>openstack</td>
+          <td>cfi</td>
+          <td>hotfix openstack</td>
+          <td>Hotfix Landscape</td>
+          <td>53.14.23.3</td>
+          <td>hotfix.ourcloud.io</td>
+          <td><a href="http://github.com/ourcloud/cf-eu10-hotfix">cf-eu10-hotix repository</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
