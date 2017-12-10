@@ -1,0 +1,12 @@
+[
+  {
+      "id": "cf-eu10-staging",
+      "iaas": "aws",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description"
+  },
+  {
+
+  }
+]
