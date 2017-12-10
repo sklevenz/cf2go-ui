@@ -1,12 +1,26 @@
-[
-  {
-      "id": "cf-eu10-staging",
+{
+  "cf-eu10-staging": {
       "iaas": "aws",
       "owner": "cfi",
       "labels": "development aws staging",
-      "description"
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com"
   },
-  {
-
+  "cf-eu20-staging": {
+      "iaas": "aws",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com"
+  },
+  "cf-eu30-staging": {
+      "iaas": "aws",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com"
   }
-]
+}
