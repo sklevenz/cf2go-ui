@@ -3,4 +3,4 @@
     - name:       cf2go
       memory:     64M
       disk_quota: 100M
-      instances:  1
+      instances:  2

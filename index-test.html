@@ -2,41 +2,60 @@
 <html>
 
   <head>
-    <script type="text/javascript">
-      function addRow(content, morecontent) {
-        if (!document.getElementsByTagName) return;
-        tabBody = document.getElementsByTagName("tbody").item(0);
-        row = document.createElement("tr");
-        cell1 = document.createElement("td");
-        cell2 = document.createElement("td");
-        textnode1 = document.createTextNode(content);
-        textnode2 = document.createTextNode(morecontent);
-        cell1.appendChild(textnode1);
-        cell2.appendChild(textnode2);
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        tabBody.appendChild(row);
-
-
-      }
-    </script>
   </head>
 
   <body>
-    <table border='1' id='mytable'>
+    <table id="landscapes" border="1" id='mytable'>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>description</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
-          <td>22</td>
-          <td>333</td>
-        </tr>
-        <tr>
-          <td>22</td>
-          <td>333</td>
+          <td>id</td>
+          <td>description</td>
         </tr>
       </tbody>
     </table>
-    <button onClick='addRow("123","456");return false;'>
-Add Row</button>
+
+    <div id="test" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <script src="script/lib.js"></script>
+
+<script>
+var landscapes = [
+    {
+        "id":"345",
+        "descr":"xyz"
+    },
+    {
+        "id":"6789",
+        "descr":"qwertz"
+    }
+];
+
+$("tr:has(td)").remove();
+
+$.each(landscapes, function (index, landscape) {
+
+    $("#landscapes").append($('<tr/>')
+      .append($('<td/>')
+      .text(landscape.id))
+      .append($('<td/>')
+      .text(landscape.descr))
+    );
+
+    $("#test").append($('<div/>').text(index + "-" +landscape.id + "-" + landscape.descr));
+
+});
+</script>
+
   </body>
 
 </html>

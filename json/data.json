@@ -5,7 +5,8 @@
       "labels": "development aws staging",
       "description": "bla bla",
       "url": "https://github.com/onrabarber",
-      "domain": "onrabarber.com"
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.21"
   },
   "cf-eu20-staging": {
       "iaas": "aws",
@@ -13,14 +14,43 @@
       "labels": "development aws staging",
       "description": "bla bla",
       "url": "https://github.com/onrabarber",
-      "domain": "onrabarber.com"
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.22"
   },
-  "cf-eu30-staging": {
+  "cf-eu20-staging": {
       "iaas": "aws",
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
       "url": "https://github.com/onrabarber",
-      "domain": "onrabarber.com"
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.22"
+  },
+  "cf-eu20-staging1": {
+      "iaas": "openstack",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.22"
+  },
+  "cf-eu20-staging2": {
+      "iaas": "azure",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.22"
+  },
+  "cf-eu30-staging3": {
+      "iaas": "sc7",
+      "owner": "cfi",
+      "labels": "development aws staging",
+      "description": "bla bla",
+      "url": "https://github.com/onrabarber",
+      "domain": "onrabarber.com",
+      "jumpbox": "10.123.23.23"
   }
 }
