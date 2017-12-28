@@ -1,42 +1,44 @@
-$(document).ready(function(){
-  readTextFile("json/data.json", function(text){
-     var landscapes = JSON.parse(text);
-     console.log(landscapes);
-     printTable(landscapes)
+$(document).ready(function() {
+  readLandscapes("json/data.json", function(text) {
+    var landscapes = JSON.parse(text);
+    console.log(landscapes);
+    printTable(landscapes)
   });
 });
 
-function printTable(landscapes){
-  $.each(landscapes, function (index, landscape) {
-      $("#landscapes").append($('<tr/>')
-        .append($('<td/>')
+function printTable(landscapes) {
+  $.each(landscapes, function(index, landscape) {
+    $("#landscapes").append($('<tr/>')
+      .append($('<td/>')
+        .append('<i class="material-icons">add_circle_outline</i>'))
+      .append($('<td/>')
         .text(index))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.iaas))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.owner))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.labels))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.description))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.jumpbox))
-        .append($('<td/>')
+      .append($('<td/>')
         .text(landscape.domain))
-        .append($('<td/>')
-        .append("<a href='" + landscape.url + "'>" + index + "</a>"))
-      );
+      .append($('<td/>')
+        .append("<a href='" + landscape.url + "'>" + landscape.url.slice(39) + "</a>"))
+    );
   });
 }
 
-function readTextFile(file, callback) {
-    var req = new XMLHttpRequest();
-    req.overrideMimeType("application/json");
-    req.open("GET", file, true);
-    req.onreadystatechange = function() {
-        if (req.readyState === 4 && req.status == "200") {
-            callback(req.responseText);
-        }
+function readLandscapes(url, callback) {
+  var req = new XMLHttpRequest();
+  req.overrideMimeType("application/json");
+  req.open("GET", url, true);
+  req.onreadystatechange = function() {
+    if (req.readyState === 4 && req.status == "200") {
+      callback(req.responseText);
     }
-    req.send(null);
+  }
+  req.send(null);
 }

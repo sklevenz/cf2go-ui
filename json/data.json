@@ -4,7 +4,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-538",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.21"
   },
@@ -13,7 +13,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-333",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.22"
   },
@@ -22,7 +22,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-321",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.22"
   },
@@ -31,7 +31,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-765",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.22"
   },
@@ -40,7 +40,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-456",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.22"
   },
@@ -49,7 +49,7 @@
       "owner": "cfi",
       "labels": "development aws staging",
       "description": "bla bla",
-      "url": "https://github.com/onrabarber",
+      "url": "https://github.infra.hana.ondemand.com/onrabarber/landscape-123",
       "domain": "onrabarber.com",
       "jumpbox": "10.123.23.23"
   }
