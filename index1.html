@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.0/bootstrap-table.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <style type="text/css">
+      /* Latest compiled and minified CSS included as External Resource*/
+
+      /* Optional theme */
+
+      /*@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css');*/
+
+      body {
+        margin: 10px;
+      }
+
+      #myTable thead>tr>th.detail,
+      #myTable tbody>tr:not(.detail-view)>td:first-of-type {
+        display: none;
+      }
+
+      #myTable thead>tr>th:nth-child(2),
+      #myTable tbody>tr:not(.detail-view)>td:nth-child(2) {
+        border-left: none !important;
+      }
+
+      #myTable thead tr>th.detail>.fht-cell,
+      #myTable tbody>tr:not(.detail-view)>td:first-of-type>a.detail-icon {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        display: none;
+        position: absolute;
+
+        *,
+        body,
+        button,
+        input,
+        textarea,
+        select {
+          text-rendering: optimizeLegibility;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        fieldset,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td {
+          margin: 0;
+          padding: 0;
+        }
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+        }
+        fieldset,
+        img {
+          border: 0;
+        }
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        strong,
+        th,
+        var {
+          font-style: normal;
+          font-weight: normal;
+        }
+        ol,
+        ul {
+          list-style: none;
+        }
+        caption,
+        th {
+          text-align: left;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: 100%;
+          font-weight: normal;
+        }
+        q:before,
+        q:after {
+          content: '';
+        }
+        abbr,
+        acronym {
+          border: 0;
+        }
+    </style>
+
+    <title>Bootstrap Table - detail view, no plus icon</title>
+    <script type='text/javascript'>
+      //<![CDATA[
+      $(window).load(function() {
+        // Bootstrap Table - detail view without plus icon, to answer https://github.com/wenzhixin/bootstrap-table/issues/964, uses bootstrap-table.10.1.min.js, simple handler, simple css
+        /* Latest compiled and minified JavaScript included as External Resource */
+        var $table = $('#myTable');
+        $table.on('expand-row.bs.table', function(e, index, row, $detail) {
+          var res = $("#desc" + index).html();
+          $detail.html(res);
+        });
+        $table.on("click-row.bs.table", function(e, row, $tr) {
+          // prints Clicked on: table table-hover, no matter if you click on row or detail-icon
+          console.log("Clicked on: " + $(e.target).attr('class'), [e, row, $tr]);
+          // In my real scenarion, trigger expands row with text detailFormatter..
+          $tr.find(">td>.detail-icon").trigger("click");
+          $tr.find(">td>.detail-icon").triggerHandler("click");
+          if ($tr.next().is('tr.detail-view')) {
+            $table.bootstrapTable('collapseRow', $tr.data('index'));
+          } else {
+            $table.bootstrapTable('expandRow', $tr.data('index'));
+          }
+        });
+
+      }); //]]>
+    </script>
+
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <h1>Example - expand row</h1>
+      </div>
+      <div id="toolbar">
+      </div>
+      <table id="myTable" data-toggle="table" data-detail-view="true" data-detail-formatter="detailFormatter">
+        <thead>
+          <tr>
+            <th>Column A</th>
+            <th>Column B</th>
+            <th>Column C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>abcd</td>
+            <td>other content</td>
+            <!-- id number is generated by tt_template -->
+            <span style="display: none;" id="desc0">
+                    <strong class="bold">Description:</strong>
+                    <br>
+                    <pre>This is row with id=0, containing other content</pre>
+                </span>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>efgh</td>
+            <td>another content</td>
+            <!-- id number is generated by tt_template -->
+            <span style="display: none;" id="desc1">
+                    <strong class="bold">Description:</strong>
+                    <br>
+                    <pre>This is row with id=1, containing another content</pre>
+                </span>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <script>
+      // tell the embed parent frame the height of the content
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(["resultsFrame", {
+          height: document.body.getBoundingClientRect().height,
+          slug: "6ony6cs2"
+        }], "*")
+      }
+    </script>
+
+  </body>
+
+</html>
